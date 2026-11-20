@@ -15,4 +15,4 @@ say("launching...")
 
 say(math("2 + 2"))
 
-repeat(say("repeating...", 5))
+repeat(say("repeating..."), 5)
