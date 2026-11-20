@@ -1,3 +1,5 @@
+import re
+
 class Action:
     def __init__(self, func, *args):
         self.func = func
@@ -24,8 +26,9 @@ def repeat(action="", num=0):
     for i in range(num):
         action.run()
 
-def math(expression=""):
-    if isinstance(expression, str):
-        return eval(expression)
-    else:
-        return expression
+def math(x=""):
+    if not isinstance(x, str):
+        return x
+    if not re.fullmatch(r"[0-9+\-*/%.()\s]+", x):
+        raise ValueError("Only math characters allowed")
+    return eval(x, {"__builtins__": {}}, {})
