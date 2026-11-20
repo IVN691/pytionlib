@@ -10,6 +10,9 @@ pip install pytionlib
 
 from pytionlib import *
 
+
 say("launching...")
+
 say(math("2 + 2"))
+
 repeat(say("repeating...", 5))
